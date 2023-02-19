@@ -1,0 +1,408 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "auth-redis",
+    "dateExported": "2023-02-19T02:10:04.072Z",
+    "version": "1.1",
+    "folders": [
+        {
+            "_id": "2c1bc634-6afd-480a-a70e-4e6b60be8195",
+            "name": "operations",
+            "containerId": "",
+            "created": "2023-02-19T02:08:34.946Z",
+            "sortNum": 10000
+        },
+        {
+            "_id": "3dede48f-c07a-4325-bcdc-a1c5b77f8f82",
+            "name": "auth",
+            "containerId": "",
+            "created": "2023-02-19T02:09:38.055Z",
+            "sortNum": 20000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "5a7b94ba-3abe-45a3-aa52-c5d22f5d7cee",
+            "colId": "abb689d9-0508-4c44-823d-3f7890fa11be",
+            "containerId": "2c1bc634-6afd-480a-a70e-4e6b60be8195",
+            "name": "available operations",
+            "url": "http://localhost:3553/operations",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-02-18T20:32:22.092Z",
+            "modified": "2023-02-19T02:08:37.844Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{token}}"
+            },
+            "tests": []
+        },
+        {
+            "_id": "3b054ade-3c33-420b-b23b-73fbaf4acede",
+            "colId": "abb689d9-0508-4c44-823d-3f7890fa11be",
+            "containerId": "3dede48f-c07a-4325-bcdc-a1c5b77f8f82",
+            "name": "login without premium",
+            "url": "http://localhost:3553/auth/login",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2023-02-18T20:49:26.548Z",
+            "modified": "2023-02-19T02:09:40.644Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"password\": 1,\n  \"username\": \"a\"\n}",
+                "form": []
+            },
+            "tests": [
+                {
+                    "type": "set-env-var",
+                    "custom": "json.token",
+                    "action": "setto",
+                    "value": "{{token}}"
+                }
+            ]
+        },
+        {
+            "_id": "53e40706-c684-467d-b859-95085dfe6233",
+            "colId": "abb689d9-0508-4c44-823d-3f7890fa11be",
+            "containerId": "2c1bc634-6afd-480a-a70e-4e6b60be8195",
+            "name": "subtract",
+            "url": "http://localhost:3553/operations/subtract?n1=50&n2=5",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2023-02-19T00:29:31.079Z",
+            "modified": "2023-02-19T02:08:39.776Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "n1",
+                    "value": "50",
+                    "isPath": false
+                },
+                {
+                    "name": "n2",
+                    "value": "5",
+                    "isPath": false
+                }
+            ],
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{token}}"
+            },
+            "tests": []
+        },
+        {
+            "_id": "7926650e-3830-4b3e-851b-820823a34696",
+            "colId": "abb689d9-0508-4c44-823d-3f7890fa11be",
+            "containerId": "3dede48f-c07a-4325-bcdc-a1c5b77f8f82",
+            "name": "logout",
+            "url": "http://localhost:3553/auth/logout/admin",
+            "method": "DELETE",
+            "sortNum": 20000,
+            "created": "2023-02-19T01:47:13.025Z",
+            "modified": "2023-02-19T02:09:42.032Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"password\": 1,\n  \"username\": \"a\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "ee50eda7-f799-463d-a385-94956f274225",
+            "colId": "abb689d9-0508-4c44-823d-3f7890fa11be",
+            "containerId": "2c1bc634-6afd-480a-a70e-4e6b60be8195",
+            "name": "multiply",
+            "url": "http://localhost:3553/operations/multiply?n1=5&n2=5",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2023-02-19T00:29:29.017Z",
+            "modified": "2023-02-19T02:08:46.697Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "n1",
+                    "value": "5",
+                    "isPath": false
+                },
+                {
+                    "name": "n2",
+                    "value": "5",
+                    "isPath": false
+                }
+            ],
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{token}}"
+            },
+            "tests": []
+        },
+        {
+            "_id": "4383e55c-7304-4097-82b0-ce6a07f404fe",
+            "colId": "abb689d9-0508-4c44-823d-3f7890fa11be",
+            "containerId": "3dede48f-c07a-4325-bcdc-a1c5b77f8f82",
+            "name": "login with factorial access",
+            "url": "http://localhost:3553/auth/login",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2023-02-19T01:27:11.803Z",
+            "modified": "2023-02-19T02:09:43.271Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"password\": 1,\n  \"username\": \"d\"\n}",
+                "form": []
+            },
+            "tests": [
+                {
+                    "type": "set-env-var",
+                    "custom": "json.token",
+                    "action": "setto",
+                    "value": "{{token}}"
+                }
+            ]
+        },
+        {
+            "_id": "79eb07f9-0301-4c98-9fa5-42f01b1ecf69",
+            "colId": "abb689d9-0508-4c44-823d-3f7890fa11be",
+            "containerId": "2c1bc634-6afd-480a-a70e-4e6b60be8195",
+            "name": "divide",
+            "url": "http://localhost:3553/operations/divide?n1=121&n2=3",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2023-02-19T00:29:26.621Z",
+            "modified": "2023-02-19T02:08:48.569Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "n1",
+                    "value": "121",
+                    "isPath": false
+                },
+                {
+                    "name": "n2",
+                    "value": "3",
+                    "isPath": false
+                }
+            ],
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{token}}"
+            },
+            "tests": []
+        },
+        {
+            "_id": "ba2793dc-56d3-4457-b3d6-b75cedef2d44",
+            "colId": "abb689d9-0508-4c44-823d-3f7890fa11be",
+            "containerId": "3dede48f-c07a-4325-bcdc-a1c5b77f8f82",
+            "name": "login with fibonacci access",
+            "url": "http://localhost:3553/auth/login",
+            "method": "POST",
+            "sortNum": 40000,
+            "created": "2023-02-19T01:25:43.482Z",
+            "modified": "2023-02-19T02:09:44.738Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"password\": 1,\n  \"username\": \"b\"\n}",
+                "form": []
+            },
+            "tests": [
+                {
+                    "type": "set-env-var",
+                    "custom": "json.token",
+                    "action": "setto",
+                    "value": "{{token}}"
+                }
+            ]
+        },
+        {
+            "_id": "f892e5f7-8149-4911-a462-5e317f7755a6",
+            "colId": "abb689d9-0508-4c44-823d-3f7890fa11be",
+            "containerId": "2c1bc634-6afd-480a-a70e-4e6b60be8195",
+            "name": "sum",
+            "url": "http://localhost:3553/operations/sum?n1=50&n2=5",
+            "method": "GET",
+            "sortNum": 50000,
+            "created": "2023-02-19T00:16:37.586Z",
+            "modified": "2023-02-19T02:08:51.641Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "n1",
+                    "value": "50",
+                    "isPath": false
+                },
+                {
+                    "name": "n2",
+                    "value": "5",
+                    "isPath": false
+                }
+            ],
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{token}}"
+            },
+            "tests": []
+        },
+        {
+            "_id": "40855287-4c62-4516-8c6a-d1fb9666e3da",
+            "colId": "abb689d9-0508-4c44-823d-3f7890fa11be",
+            "containerId": "3dede48f-c07a-4325-bcdc-a1c5b77f8f82",
+            "name": "login with prime access",
+            "url": "http://localhost:3553/auth/login",
+            "method": "POST",
+            "sortNum": 50000,
+            "created": "2023-02-19T01:26:17.712Z",
+            "modified": "2023-02-19T02:09:45.957Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"password\": 1,\n  \"username\": \"c\"\n}",
+                "form": []
+            },
+            "tests": [
+                {
+                    "type": "set-env-var",
+                    "custom": "json.token",
+                    "action": "setto",
+                    "value": "{{token}}"
+                }
+            ]
+        },
+        {
+            "_id": "fc1bce81-a109-4786-9ebf-9dd935618f79",
+            "colId": "abb689d9-0508-4c44-823d-3f7890fa11be",
+            "containerId": "2c1bc634-6afd-480a-a70e-4e6b60be8195",
+            "name": "power",
+            "url": "http://localhost:3553/operations/power?n1=5&n2=2",
+            "method": "GET",
+            "sortNum": 60000,
+            "created": "2023-02-19T00:50:15.043Z",
+            "modified": "2023-02-19T02:08:53.169Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "n1",
+                    "value": "5",
+                    "isPath": false
+                },
+                {
+                    "name": "n2",
+                    "value": "2",
+                    "isPath": false
+                }
+            ],
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{token}}"
+            },
+            "tests": []
+        },
+        {
+            "_id": "f67874d0-f313-4092-af52-45dc72c92f78",
+            "colId": "abb689d9-0508-4c44-823d-3f7890fa11be",
+            "containerId": "3dede48f-c07a-4325-bcdc-a1c5b77f8f82",
+            "name": "login premium",
+            "url": "http://localhost:3553/auth/login",
+            "method": "POST",
+            "sortNum": 60000,
+            "created": "2023-02-19T01:26:40.120Z",
+            "modified": "2023-02-19T02:09:46.936Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"password\": 1,\n  \"username\": \"admin\"\n}",
+                "form": []
+            },
+            "tests": [
+                {
+                    "type": "set-env-var",
+                    "custom": "json.token",
+                    "action": "setto",
+                    "value": "{{token}}"
+                }
+            ]
+        },
+        {
+            "_id": "bb61dbc2-89ee-492e-ac04-b05b9194e394",
+            "colId": "abb689d9-0508-4c44-823d-3f7890fa11be",
+            "containerId": "2c1bc634-6afd-480a-a70e-4e6b60be8195",
+            "name": "fibonacci",
+            "url": "http://localhost:3553/operations/fibonacci?n=20",
+            "method": "GET",
+            "sortNum": 70000,
+            "created": "2023-02-19T00:50:20.179Z",
+            "modified": "2023-02-19T02:08:54.972Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "n",
+                    "value": "20",
+                    "isPath": false
+                }
+            ],
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{token}}"
+            },
+            "tests": []
+        },
+        {
+            "_id": "9ccf9348-1b47-4f51-8065-97205733f8be",
+            "colId": "abb689d9-0508-4c44-823d-3f7890fa11be",
+            "containerId": "2c1bc634-6afd-480a-a70e-4e6b60be8195",
+            "name": "is prime",
+            "url": "http://localhost:3553/operations/is-prime?n=121",
+            "method": "GET",
+            "sortNum": 80000,
+            "created": "2023-02-19T01:37:25.941Z",
+            "modified": "2023-02-19T02:08:56.103Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "n",
+                    "value": "121",
+                    "isPath": false
+                }
+            ],
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{token}}"
+            },
+            "tests": []
+        },
+        {
+            "_id": "943a251d-92b9-4a8b-bf1e-3903491e4883",
+            "colId": "abb689d9-0508-4c44-823d-3f7890fa11be",
+            "containerId": "2c1bc634-6afd-480a-a70e-4e6b60be8195",
+            "name": "factorial",
+            "url": "http://localhost:3553/operations/factorial?n=10",
+            "method": "GET",
+            "sortNum": 90000,
+            "created": "2023-02-19T01:41:51.051Z",
+            "modified": "2023-02-19T02:08:57.746Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "n",
+                    "value": "10",
+                    "isPath": false
+                }
+            ],
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{token}}"
+            },
+            "tests": []
+        }
+    ]
+}

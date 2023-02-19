@@ -12,4 +12,4 @@ The purpose of this project is to test authentication and authorization using Re
   - [Guards](https://docs.nestjs.com/guards)
   - [Redis](https://redis.io/)
   - [JWT](https://jwt.io/)
-  <!-- - [Thunder Client](https://www.thunderclient.com/) -->
+  - [Thunder Client](https://www.thunderclient.com/)
